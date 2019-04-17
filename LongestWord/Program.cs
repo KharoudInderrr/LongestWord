@@ -9,6 +9,8 @@ namespace LongestWord
     class Program
     {
 
+        string a;
+
         public Program()
         {
         }
@@ -18,42 +20,34 @@ namespace LongestWord
 
             Program a = new Program();
             Console.WriteLine("The longest word is:");
-            Console.WriteLine(a.MyFunctionA("Ada Lovelace wrote the first algorithm wrote the first algorithm designed for processing by an Analytical Engine."));
+           a.MyFunctionA("Ada Lovelace wrote the first algorithm wrote the first algorithm designed for processing by an Analytical Engine.");
 
         }
 
 
 
-        public MyFunctionA(string input)
+        public void  MyFunctionA(string input)
         {
             string[] words = input.Split(' ');
+           
 
             int wordArrayLength = words.Length;
-            int[] wordsLength = new int[wordArrayLength];
             int x = 0;
-            foreach(var word in words)
+            foreach (var word in words)
             {
 
+                foreach (var word2 in words)
+                {
+                    if (word2.Length > word.Length)
+                    {
+                        a = word2;
+
+                    }
+                }
             }
+            Console.WriteLine("Longest word is " + a);
+            Console.ReadLine();
 
-            string currentWord = words[0];
-            string nextWord;
-            string longestWord = currentWord;
-            for(int y = 0; y<words.Length-1; y++)
-            {
-                currentWord = words[y];
-                nextWord = words[y + 1];
-
-
-
-
-
-
-
-            }
-
-
-                 
         }
     }
 }
